@@ -1,0 +1,16 @@
+{
+  "name": "ubi-thunderboard",
+  "version": "1.0.0",
+  "description": "A driver for connecting the Thunderboard sensors to the Ubikampus MQTT bus",
+  "main": "main.js",
+  "dependencies": {
+    "@abandonware/noble": "^1.9.2-10",
+    "ubimqtt": "^2.0.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Petri Savolainen",
+  "license": "MIT"
+}
