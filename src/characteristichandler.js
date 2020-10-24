@@ -131,7 +131,13 @@ CharacteristicHandler.recurseCharacteristics = function(index, characteristics, 
 	//console.log("trying to call handleCharacteristic() with index " + index +" characteristics.length " +characteristics.length);	
 	return CharacteristicHandler.handleCharacteristic(characteristics[index], readings, function(err)
 		{
-		return CharacteristicHandler.recurseCharacteristics(index+1,  characteristics, readings, callback);
+		if (err)
+			{
+			console.log("Error in handling a characteristic "+ err);	
+			return callback(err);
+			}
+		else	
+			return CharacteristicHandler.recurseCharacteristics(index+1,  characteristics, readings, callback);
 		});
 	};
 

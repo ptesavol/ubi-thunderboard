@@ -19,20 +19,32 @@ noble.on("stateChange", async (state) =>
 
 noble.on("discover", async (peripheral) => 
 	{
-	if (peripheral.connectable && thunderboards.hasOwnProperty(peripheral.address))
+	if (peripheral.connectable)
 		{
 		let thunderboard = thunderboards[peripheral.address];	
 		
 		await peripheral.connectAsync();	
 		
-		console.log("connected to thunderboard: " + thunderboard.labelNumber + " roomName: " + thunderboard.roomName);
+		//console.log("connected to thunderboard: " + thunderboard.labelNumber + " roomName: " + thunderboard.roomName);
 		
 		let obj = await peripheral.discoverAllServicesAndCharacteristicsAsync();
 		//console.log(obj);
 
-		let reader = new ThunderboardReader(thunderboard, peripheral, obj.characteristics);	
-		readers[peripheral.address] = reader;
-		reader.run();
+		for (let i = 0; i< obj.characteristics.length; i++)
+			{
+			if (obj.characteristics[i].uuid === "2a29")
+				{
+				obj.characteristics[i].read(function(err, buf)
+					{	
+					if (buf.toString() === "Silicon Laboratories")
+						console.log(peripheral.address);	
+					});
+				}	
+			}	
+
+		//let reader = new ThunderboardReader(thunderboard, obj.characteristics);	
+		//readers[peripheral.address] = reader;
+		//reader.run();
 		}
 	});
 
