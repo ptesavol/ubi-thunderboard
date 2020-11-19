@@ -125,7 +125,7 @@ var settings =
 		*/	
 		},
 	
-	mqttUrl: "mqtt://localhost:1883",
+	mqttUrl: "mqtt://iot.ubikampus.net:1883",
 	topicPrefix: "rooms/",
 	privateKeyPath: require('os').homedir() + "/.private/thunderboard-private-key.pem",
 	publicKeyPath: require('os').homedir() + "/.private/thinderboard-public-key.pem",
