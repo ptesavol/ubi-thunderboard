@@ -23,8 +23,10 @@ noble.on("discover", async (peripheral) =>
 		{
 		let thunderboard = thunderboards[peripheral.address];	
 		
+		await noble.stopScanningAsync();
 		await peripheral.connectAsync();	
-		
+		await noble.startScanningAsync();
+
 		console.log("connected to thunderboard: " + thunderboard.labelNumber + " roomName: " + thunderboard.roomName);
 		
 		let obj = await peripheral.discoverAllServicesAndCharacteristicsAsync();

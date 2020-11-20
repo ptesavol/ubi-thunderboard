@@ -1,0 +1,17 @@
+[Unit]
+Description=The Thunderboard sensor service
+After=network-online.target
+
+[Service]
+Type=simple
+User=pi
+Group=pi
+WorkingDirectory=/home/pi/ubi-thunderboard
+Environment=HOME=/home/pi-ubi-thunderboard
+
+ExecStart=/bin/bash '/home/pi-ubi-thunderboard/run.sh'
+
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
