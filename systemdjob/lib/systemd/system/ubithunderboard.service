@@ -7,11 +7,10 @@ Type=simple
 User=pi
 Group=pi
 WorkingDirectory=/home/pi/ubi-thunderboard
-Environment=HOME=/home/pi/ubi-thunderboard
+Environment=HOME=/home/pi
 
-ExecStart=/bin/bash '/home/pi/ubi-thunderboard/run.sh'
+ExecStart=/bin/bash /home/pi/ubi-thunderboard/run.sh
 
 Restart=always
 
 [Install]
-WantedBy=multi-user.target

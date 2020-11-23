@@ -3,6 +3,7 @@ var settings =
 	{
 	thunderboards: 
 		{
+		/*
 		"90:fd:9f:7b:84:1e": 
 			{
 			labelNumber: 1,
@@ -31,14 +32,14 @@ var settings =
 			roomName: "dart",
 			bluetoothAddress: "90:fd:9f:7b:51:3a" 	 	
 			},
-		
+		*/
 		"90:fd:9f:7b:81:bf":
 			{
 			labelNumber: 5,
 			roomName: "erlang",
 			bluetoothAddress: "90:fd:9f:7b:81:bf"	
 			},
-		/*	
+			
 		"90:fd:9f:7b:83:fe":
 			{
 			labelNumber: 6,
@@ -66,7 +67,7 @@ var settings =
 			roomName: "idris",
 			bluetoothAddress: "90:fd:9f:7b:82:61"	
 			},
-
+		/*
 		"00:0d:6f:20:d4:00":
 			{
 			labelNumber: 10,
@@ -126,9 +127,9 @@ var settings =
 		},
 	
 	mqttUrl: "mqtt://iot.ubikampus.net:1883",
-	topicPrefix: "rooms/",
+	topicPrefix: "data/knownpublishers/thunderboard/rooms/",
 	privateKeyPath: require('os').homedir() + "/.private/thunderboard-private-key.pem",
-	publicKeyPath: require('os').homedir() + "/.private/thinderboard-public-key.pem",
+	publicKeyPath: require('os').homedir() + "/.private/thunderboard-public-key.pem",
 
 	readingInterval: 5000
 	};
