@@ -131,7 +131,7 @@ var settings =
 	privateKeyPath: require('os').homedir() + "/.private/thunderboard-private-key.pem",
 	publicKeyPath: require('os').homedir() + "/.private/thunderboard-public-key.pem",
 
-	readingInterval: 5000
+	readingInterval: 60000
 	};
 	
 if (module.exports)
